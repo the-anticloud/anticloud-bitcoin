@@ -1,0 +1,1013 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "BITCOIN",
+  "source": {
+    "repo_path": "UPSTREAM_CLONE",
+    "git": {
+      "head": "7988380da987c0b860885853ace8149b84ac2ee8",
+      "url": "https://github.com/bitcoin/bitcoin",
+      "branch": "master",
+      "committed_at": ""
+    }
+  },
+  "metrics": {
+    "files_total": 1565,
+    "source_files_scanned": 1179,
+    "lines_of_code": 332691,
+    "languages": {
+      ".h": 615,
+      ".cpp": 423,
+      ".png": 86,
+      ".cc": 86,
+      ".mk": 42,
+      "(none)": 35,
+      ".patch": 35,
+      ".md": 27,
+      ".yml": 24,
+      ".svg": 20,
+      ".txt": 19,
+      ".ui": 19,
+      ".c": 17,
+      ".sh": 14,
+      ".py": 12
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "COPYING",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 16,
+    "unique": 14,
+    "by_ecosystem": {
+      "native": 15,
+      "vcpkg": 1
+    },
+    "list": [
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "unofficial-sqlite3",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(unofficial-sqlite3"
+      },
+      {
+        "ecosystem": "native",
+        "name": "SQLite3",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(SQLite3"
+      },
+      {
+        "ecosystem": "native",
+        "name": "ZeroMQ",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(ZeroMQ"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Libmultiprocess",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(Libmultiprocess"
+      },
+      {
+        "ecosystem": "native",
+        "name": "LibmultiprocessNative",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(LibmultiprocessNative"
+      },
+      {
+        "ecosystem": "native",
+        "name": "USDT",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(USDT"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Qt",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(Qt"
+      },
+      {
+        "ecosystem": "native",
+        "name": "QRencode",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(QRencode"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Python3",
+        "version": "",
+        "source_file": "CMakeLists.txt",
+        "raw": "find_package(Python3"
+      },
+      {
+        "ecosystem": "vcpkg",
+        "name": "boost-multi-index",
+        "version": "",
+        "source_file": "vcpkg.json",
+        "raw": ""
+      },
+      {
+        "ecosystem": "native",
+        "name": "Git",
+        "version": "",
+        "source_file": "src/CMakeLists.txt",
+        "raw": "find_package(Git"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "src/ipc/libmultiprocess/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "CapnProto",
+        "version": "",
+        "source_file": "src/ipc/libmultiprocess/CMakeLists.txt",
+        "raw": "find_package(CapnProto"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Threads",
+        "version": "",
+        "source_file": "src/leveldb/CMakeLists.txt",
+        "raw": "find_package(Threads"
+      },
+      {
+        "ecosystem": "native",
+        "name": "Valgrind",
+        "version": "",
+        "source_file": "src/secp256k1/CMakeLists.txt",
+        "raw": "find_package(Valgrind"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 944,
+    "files_with_findings": 873,
+    "severity": {
+      "high": 15,
+      "medium": 3,
+      "low": 926
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "src/wallet/load.cpp",
+            "line": 67,
+            "cwe": "CWE-295",
+            "snippet": "options.verify = false;"
+          }
+        ]
+      },
+      "A02-CryptographicFailures": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/random.cpp",
+            "line": 308,
+            "cwe": "CWE-338",
+            "snippet": "/* OpenBSD. From the arc4random(3) man page:"
+          },
+          {
+            "severity": "medium",
+            "file": "src/bench/crypto_hash.cpp",
+            "line": 34,
+            "cwe": "CWE-327",
+            "snippet": "static void SHA1(benchmark::Bench& bench)"
+          },
+          {
+            "severity": "medium",
+            "file": "src/bench/nanobench.h",
+            "line": 574,
+            "cwe": "CWE-338",
+            "snippet": "* `std::mt19937_64`. Still, this RNG is 2-3 times as fast."
+          },
+          {
+            "severity": "high",
+            "file": "src/crypto/ctaes/test.c",
+            "line": 26,
+            "cwe": "CWE-327",
+            "snippet": "/* AES-ECB test vectors from NIST sp800-38a. */"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 13,
+        "findings": [
+          {
+            "severity": "high",
+            "file": ".github/ci-windows-cross.py",
+            "line": 176,
+            "cwe": "CWE-95",
+            "snippet": "exec(f'{args.step}()')"
+          },
+          {
+            "severity": "high",
+            "file": ".github/ci-windows.py",
+            "line": 234,
+            "cwe": "CWE-95",
+            "snippet": "exec(f'{args.step}(\"{args.ci_type}\")')"
+          },
+          {
+            "severity": "high",
+            "file": "src/ipc/libmultiprocess/ci/scripts/ci_helpers.sh",
+            "line": 41,
+            "cwe": "CWE-78",
+            "snippet": "available=\"$(available_nproc)\""
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/addressbookpage.cpp",
+            "line": 295,
+            "cwe": "CWE-95",
+            "snippet": "contextMenu->exec(QCursor::pos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/bitcoingui.cpp",
+            "line": 1736,
+            "cwe": "CWE-95",
+            "snippet": "menu->exec(globalPos);"
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/coincontroldialog.cpp",
+            "line": 194,
+            "cwe": "CWE-95",
+            "snippet": "contextMenu->exec(QCursor::pos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/qrimagewidget.cpp",
+            "line": 143,
+            "cwe": "CWE-95",
+            "snippet": "contextMenu->exec(event->globalPos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/receivecoinsdialog.cpp",
+            "line": 270,
+            "cwe": "CWE-95",
+            "snippet": "contextMenu->exec(QCursor::pos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/qt/rpcconsole.cpp",
+            "line": 1273,
+            "cwe": "CWE-95",
+            "snippet": "peersTableContextMenu->exec(QCursor::pos());"
+          },
+          {
+            "severity": "high",
+            "file": "src/script/miniscript.h",
+            "line": 417,
+            "cwe": "CWE-95",
+            "snippet": "* - exec (if valid) is the largest difference between stack size anywhere during execution and at"
+          },
+          {
+            "severity": "high",
+            "file": "src/secp256k1/src/bench_ecmult.c",
+            "line": 200,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(str, \"ecmult_gen\");"
+          },
+          {
+            "severity": "high",
+            "file": "src/secp256k1/src/modules/silentpayments/bench_impl.h",
+            "line": 196,
+            "cwe": "CWE-120",
+            "snippet": "sprintf(str, \"silentpayments_scan_nomatch_N=%i\", num_outputs);"
+          },
+          {
+            "severity": "high",
+            "file": "src/secp256k1/tools/check-abi.sh",
+            "line": 40,
+            "cwe": "CWE-78",
+            "snippet": "_orig_dir=\"$(pwd)\""
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 77,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/blockencodings.cpp",
+            "line": 27,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Use our mempool prior to block acceptance to predictively fill more than just the coinbase"
+          },
+          {
+            "severity": "low",
+            "file": "src/checkqueue.h",
+            "line": 63,
+            "cwe": "CWE-",
+            "snippet": "unsigned int nTodo GUARDED_BY(m_mutex){0};"
+          },
+          {
+            "severity": "low",
+            "file": "src/cluster_linearize.h",
+            "line": 256,
+            "cwe": "CWE-",
+            "snippet": "/** Get the connected component within the subset \"todo\" that contains tx (which must be in"
+          },
+          {
+            "severity": "low",
+            "file": "src/coins.cpp",
+            "line": 204,
+            "cwe": "CWE-",
+            "snippet": "if (!it->second.IsDirty()) { // TODO a cursor can only contain dirty entries"
+          },
+          {
+            "severity": "low",
+            "file": "src/coins.h",
+            "line": 790,
+            "cwe": "CWE-",
+            "snippet": "// TODO: pass in a boolean to limit these possible overwrites to known"
+          },
+          {
+            "severity": "low",
+            "file": "src/httpserver.cpp",
+            "line": 186,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Implement specific error formatting for the REST and JSON-RPC servers responses."
+          },
+          {
+            "severity": "low",
+            "file": "src/net.cpp",
+            "line": 4259,
+            "cwe": "CWE-",
+            "snippet": "// Move first element of m_reconnections to todo (avoiding an allocation inside the lock)."
+          },
+          {
+            "severity": "low",
+            "file": "src/netaddress.h",
+            "line": 187,
+            "cwe": "CWE-",
+            "snippet": "* TODO: consider adding IsCJDNS() here when more peers adopt CJDNS, see:"
+          },
+          {
+            "severity": "low",
+            "file": "src/net_permissions.cpp",
+            "line": 25,
+            "cwe": "CWE-",
+            "snippet": "// Parse the following format: \"perm1,perm2@xxxxxx\""
+          },
+          {
+            "severity": "low",
+            "file": "src/net_processing.cpp",
+            "line": 228,
+            "cwe": "CWE-",
+            "snippet": "* TODO: move most members from CNodeState to this structure."
+          },
+          {
+            "severity": "low",
+            "file": "src/prevector.h",
+            "line": 140,
+            "cwe": "CWE-",
+            "snippet": "/* FIXME: Because malloc/realloc here won't call new_handler if allocation fails, assert"
+          },
+          {
+            "severity": "low",
+            "file": "src/pubkey.cpp",
+            "line": 52,
+            "cwe": "CWE-",
+            "snippet": "/* Hack to initialize sig with a correctly-parsed but invalid signature. */"
+          },
+          {
+            "severity": "low",
+            "file": "src/rest.cpp",
+            "line": 755,
+            "cwe": "CWE-",
+            "snippet": "// A bit of a hack - dependency on a function defined in rpc/blockchain.cpp"
+          },
+          {
+            "severity": "low",
+            "file": "src/sync.h",
+            "line": 126,
+            "cwe": "CWE-",
+            "snippet": "* TODO: We should move away from using the recursive lock by default."
+          },
+          {
+            "severity": "low",
+            "file": "src/txgraph.cpp",
+            "line": 1260,
+            "cwe": "CWE-",
+            "snippet": "SetType todo;"
+          },
+          {
+            "severity": "low",
+            "file": "src/validation.cpp",
+            "line": 1679,
+            "cwe": "CWE-",
+            "snippet": "// TODO: allow witness replacement in packages."
+          },
+          {
+            "severity": "low",
+            "file": "src/index/base.cpp",
+            "line": 348,
+            "cwe": "CWE-",
+            "snippet": "// TODO at some point we could parameterize whether a particular index can be"
+          },
+          {
+            "severity": "low",
+            "file": "src/index/coinstatsindex.cpp",
+            "line": 98,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Change this to deleting the old index with v31."
+          },
+          {
+            "severity": "low",
+            "file": "src/interfaces/chain.h",
+            "line": 96,
+            "cwe": "CWE-",
+            "snippet": "//! TODO: Current chain methods are too low level, exposing too much of the"
+          },
+          {
+            "severity": "low",
+            "file": "src/ipc/libmultiprocess/include/mp/proxy-io.h",
+            "line": 569,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: Could just invoke removed addCleanup fn here instead of duplicating code"
+          },
+          {
+            "severity": "low",
+            "file": "src/ipc/libmultiprocess/include/mp/proxy-types.h",
+            "line": 520,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: maybe call call_context.releaseParams()"
+          },
+          {
+            "severity": "low",
+            "file": "src/ipc/libmultiprocess/include/mp/type-pair.h",
+            "line": 11,
+            "cwe": "CWE-",
+            "snippet": "// FIXME: Overload on output type instead of value type and switch to std::get and merge with next overload"
+          },
+          {
+            "severity": "low",
+            "file": "src/ipc/libmultiprocess/include/mp/type-tuple.h",
+            "line": 11,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Should generalize this to work with arbitrary length tuples, not just length 2-tuples."
+          },
+          {
+            "severity": "low",
+            "file": "src/ipc/libmultiprocess/src/mp/util.cpp",
+            "line": 166,
+            "cwe": "CWE-",
+            "snippet": "// TODO: Report errors to the parent via a pipe (e.g. write errno)"
+          },
+          {
+            "severity": "low",
+            "file": "src/leveldb/db/c.cc",
+            "line": 152,
+            "cwe": "CWE-",
+            "snippet": "// TODO(sanjay): Merge with existing error?"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 847,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "ci/test_run_all.sh",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "# file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "ci/lint/01_install.sh",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "# file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "ci/lint/06_script.sh",
+            "line": 5,
+            "cwe": "CWE-319",
+            "snippet": "# file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "share/rpcauth/rpcauth.py",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "# file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/addrdb.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/addrdb.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/addrman.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/addrman.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/addrman_impl.h",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/arith_uint256.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/arith_uint256.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/attributes.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/banman.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/banman.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/base58.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/base58.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bech32.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bech32.h",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bip324.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bip324.h",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bitcoin-chainstate.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bitcoin-cli.cpp",
+            "line": 4,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bitcoin-tx.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bitcoin-util.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          },
+          {
+            "severity": "low",
+            "file": "src/bitcoin-wallet.cpp",
+            "line": 3,
+            "cwe": "CWE-319",
+            "snippet": "// file COPYING or http://www.opensource.org/licenses/mit-license.php."
+          }
+        ]
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/noui.cpp",
+            "line": 80,
+            "cwe": "CWE-601",
+            "snippet": "void noui_test_redirect()"
+          },
+          {
+            "severity": "low",
+            "file": "src/noui.h",
+            "line": 23,
+            "cwe": "CWE-601",
+            "snippet": "void noui_test_redirect();"
+          }
+        ]
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 16,
+    "files_with_findings": 16,
+    "severity": {
+      "high": 0,
+      "medium": 9,
+      "low": 7
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 9,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/bench/nanobench.h",
+            "line": 1580,
+            "cwe": "CWE-1336",
+            "snippet": "static std::vector<Node> parseMustacheTemplate(char const** tpl) {"
+          },
+          {
+            "severity": "medium",
+            "file": "src/interfaces/mining.h",
+            "line": 33,
+            "cwe": "CWE-1336",
+            "snippet": "virtual ~BlockTemplate() = default;"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/block_template_manager.cpp",
+            "line": 42,
+            "cwe": "CWE-1336",
+            "snippet": "std::unique_ptr<CBlockTemplate> BlockTemplateManager::CreateNewTemplate(const BlockCreateOptions& options)"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/block_template_manager.h",
+            "line": 50,
+            "cwe": "CWE-1336",
+            "snippet": "std::unique_ptr<CBlockTemplate> CreateNewTemplate(const BlockCreateOptions& options);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/interfaces.cpp",
+            "line": 992,
+            "cwe": "CWE-1336",
+            "snippet": "auto new_template = block_template_manager().CreateNewTemplate(options);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/miner.cpp",
+            "line": 132,
+            "cwe": "CWE-1336",
+            "snippet": "pblocktemplate.reset(new CBlockTemplate());"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/mini_miner.cpp",
+            "line": 244,
+            "cwe": "CWE-1336",
+            "snippet": "void MiniMiner::BuildMockTemplate(std::optional<CFeeRate> target_feerate)"
+          },
+          {
+            "severity": "medium",
+            "file": "src/node/mini_miner.h",
+            "line": 128,
+            "cwe": "CWE-1336",
+            "snippet": "void BuildMockTemplate(std::optional<CFeeRate> target_feerate);"
+          },
+          {
+            "severity": "medium",
+            "file": "src/rpc/mining.cpp",
+            "line": 197,
+            "cwe": "CWE-1336",
+            "snippet": "std::unique_ptr<node::CBlockTemplate> block_template{block_template_manager.CreateNewTemplate({.coinbase_output_script = coinbase_output_script})};"
+          }
+        ]
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM09-Misinformation": {
+        "count": 7,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/validation.cpp",
+            "line": 5146,
+            "cwe": "CWE-",
+            "snippet": "// Assert to verify Flatten() has been called."
+          },
+          {
+            "severity": "low",
+            "file": "src/kernel/bitcoinkernel.cpp",
+            "line": 687,
+            "cwe": "CWE-",
+            "snippet": "assert((flags & ~btck_ScriptVerificationFlags_ALL) == 0);"
+          },
+          {
+            "severity": "low",
+            "file": "src/leveldb/db/fault_injection_test.cc",
+            "line": 501,
+            "cwe": "CWE-",
+            "snippet": "ASSERT_OK(Verify(0, num_pre_sync, FaultInjectionTest::VAL_EXPECT_NO_ERROR));"
+          },
+          {
+            "severity": "low",
+            "file": "src/script/interpreter.cpp",
+            "line": 2113,
+            "cwe": "CWE-",
+            "snippet": "assert((flags & SCRIPT_VERIFY_P2SH) != 0);"
+          },
+          {
+            "severity": "low",
+            "file": "src/script/interpreter.h",
+            "line": 158,
+            "cwe": "CWE-",
+            "snippet": "static_assert(0 < MAX_SCRIPT_VERIFY_FLAGS_BITS && MAX_SCRIPT_VERIFY_FLAGS_BITS <= 63);"
+          },
+          {
+            "severity": "low",
+            "file": "src/secp256k1/src/util.h",
+            "line": 165,
+            "cwe": "CWE-",
+            "snippet": "/* Like assert(), but when VERIFY is defined. */"
+          },
+          {
+            "severity": "low",
+            "file": "src/wallet/wallet.cpp",
+            "line": 3459,
+            "cwe": "CWE-",
+            "snippet": "assert(seed_key.VerifyPubKey(seed));"
+          }
+        ]
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:27f4c3e1-9ba8-5306-8949-ce1900d13cc7",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-05T20:01:14Z",
+      "component": {
+        "type": "application",
+        "name": "BITCOIN",
+        "version": "7988380da987",
+        "bom-ref": "pkg:generic/anticloud/BITCOIN@7988380da987",
+        "purl": "pkg:generic/anticloud/BITCOIN@7988380da987",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "7988380da987c0b860885853ace8149b84ac2ee8"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/bitcoin/bitcoin"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "Threads",
+        "version": "unspecified",
+        "purl": "pkg:generic/Threads",
+        "bom-ref": "native/Threads@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "unofficial-sqlite3",
+        "version": "unspecified",
+        "purl": "pkg:generic/unofficial-sqlite3",
+        "bom-ref": "native/unofficial-sqlite3@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "SQLite3",
+        "version": "unspecified",
+        "purl": "pkg:generic/SQLite3",
+        "bom-ref": "native/SQLite3@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "ZeroMQ",
+        "version": "unspecified",
+        "purl": "pkg:generic/ZeroMQ",
+        "bom-ref": "native/ZeroMQ@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Libmultiprocess",
+        "version": "unspecified",
+        "purl": "pkg:generic/Libmultiprocess",
+        "bom-ref": "native/Libmultiprocess@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "LibmultiprocessNative",
+        "version": "unspecified",
+        "purl": "pkg:generic/LibmultiprocessNative",
+        "bom-ref": "native/LibmultiprocessNative@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "USDT",
+        "version": "unspecified",
+        "purl": "pkg:generic/USDT",
+        "bom-ref": "native/USDT@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Qt",
+        "version": "unspecified",
+        "purl": "pkg:generic/Qt",
+        "bom-ref": "native/Qt@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "QRencode",
+        "version": "unspecified",
+        "purl": "pkg:generic/QRencode",
+        "bom-ref": "native/QRencode@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Python3",
+        "version": "unspecified",
+        "purl": "pkg:generic/Python3",
+        "bom-ref": "native/Python3@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "boost-multi-index",
+        "version": "unspecified",
+        "purl": "pkg:generic/boost-multi-index",
+        "bom-ref": "vcpkg/boost-multi-index@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Git",
+        "version": "unspecified",
+        "purl": "pkg:generic/Git",
+        "bom-ref": "native/Git@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "CapnProto",
+        "version": "unspecified",
+        "purl": "pkg:generic/CapnProto",
+        "bom-ref": "native/CapnProto@unspecified"
+      },
+      {
+        "type": "library",
+        "name": "Valgrind",
+        "version": "unspecified",
+        "purl": "pkg:generic/Valgrind",
+        "bom-ref": "native/Valgrind@unspecified"
+      }
+    ]
+  },
+  "elapsed_seconds": 4175.25
+}

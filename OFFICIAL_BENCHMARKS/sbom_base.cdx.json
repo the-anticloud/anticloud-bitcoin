@@ -1,0 +1,137 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:27f4c3e1-9ba8-5306-8949-ce1900d13cc7",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-05T20:01:14Z",
+    "component": {
+      "type": "application",
+      "name": "BITCOIN",
+      "version": "7988380da987",
+      "bom-ref": "pkg:generic/anticloud/BITCOIN@7988380da987",
+      "purl": "pkg:generic/anticloud/BITCOIN@7988380da987",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "7988380da987c0b860885853ace8149b84ac2ee8"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/bitcoin/bitcoin"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "Threads",
+      "version": "unspecified",
+      "purl": "pkg:generic/Threads",
+      "bom-ref": "native/Threads@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "unofficial-sqlite3",
+      "version": "unspecified",
+      "purl": "pkg:generic/unofficial-sqlite3",
+      "bom-ref": "native/unofficial-sqlite3@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "SQLite3",
+      "version": "unspecified",
+      "purl": "pkg:generic/SQLite3",
+      "bom-ref": "native/SQLite3@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "ZeroMQ",
+      "version": "unspecified",
+      "purl": "pkg:generic/ZeroMQ",
+      "bom-ref": "native/ZeroMQ@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Libmultiprocess",
+      "version": "unspecified",
+      "purl": "pkg:generic/Libmultiprocess",
+      "bom-ref": "native/Libmultiprocess@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "LibmultiprocessNative",
+      "version": "unspecified",
+      "purl": "pkg:generic/LibmultiprocessNative",
+      "bom-ref": "native/LibmultiprocessNative@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "USDT",
+      "version": "unspecified",
+      "purl": "pkg:generic/USDT",
+      "bom-ref": "native/USDT@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Qt",
+      "version": "unspecified",
+      "purl": "pkg:generic/Qt",
+      "bom-ref": "native/Qt@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "QRencode",
+      "version": "unspecified",
+      "purl": "pkg:generic/QRencode",
+      "bom-ref": "native/QRencode@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Python3",
+      "version": "unspecified",
+      "purl": "pkg:generic/Python3",
+      "bom-ref": "native/Python3@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "boost-multi-index",
+      "version": "unspecified",
+      "purl": "pkg:generic/boost-multi-index",
+      "bom-ref": "vcpkg/boost-multi-index@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Git",
+      "version": "unspecified",
+      "purl": "pkg:generic/Git",
+      "bom-ref": "native/Git@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "CapnProto",
+      "version": "unspecified",
+      "purl": "pkg:generic/CapnProto",
+      "bom-ref": "native/CapnProto@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "Valgrind",
+      "version": "unspecified",
+      "purl": "pkg:generic/Valgrind",
+      "bom-ref": "native/Valgrind@unspecified"
+    }
+  ]
+}
